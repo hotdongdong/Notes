@@ -1,12 +1,12 @@
 ## 安装
 
-```
+```tsx
 npm install @react-navigation/native @react-navigation/stack
 ```
 
 ## 设置路由配置文件 app.navigator.tsx
 
-```
+```tsx
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -71,10 +71,10 @@ export const AppNavigator = () => {
 
 ## 引入根组件 App.tsx
 
-```
-import React from 'react';
+```tsx
+import React from "react";
 
-import {AppNavigator} from './navigators/app-navigator';
+import { AppNavigator } from "./navigators/app-navigator";
 
 export const App = () => {
   return <AppNavigator />;
@@ -83,36 +83,36 @@ export const App = () => {
 
 ## 实现路由跳转
 
-```
-  import {TouchableOpacity,View} from 'react-native';
-  import {useNavigation} from '@react-navigation/native';
+```tsx
+import { TouchableOpacity, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-  const navigation: StackNavigationProp<NavigatorParamList> = useNavigation();
+const navigation: StackNavigationProp<NavigatorParamList> = useNavigation();
 
-  // 携带参数
-  const click = () => {
-    navigation.navigate('PreviewMode',{ itemId: 123, otherParams: 'Hello PreviewModeScreen'});
-  }
+// 携带参数
+const click = () => {
+  navigation.navigate("PreviewMode", {
+    itemId: 123,
+    otherParams: "Hello PreviewModeScreen",
+  });
+};
 
-  // 屏幕1
-  export const TextScreen = () => {
-    return (
-      <Button title="button" onPress={() => click()} />
-    )
-  }
+// 屏幕1
+export const TextScreen = () => {
+  return <Button title="button" onPress={() => click()} />;
+};
 
-  // 屏幕2
-  // 通过route来接收参数
-  export const PreviewModeScreen = ({route}) => {
-    const {itemId, otherParams} = route?.params
+// 屏幕2
+// 通过route来接收参数
+export const PreviewModeScreen = ({ route }) => {
+  const { itemId, otherParams } = route?.params;
 
-    return (
-      <View>
-        <Text>PreviewMode Screen</Text>
-        <Text>Item ID: {itemId}</Text>
-        <Text>Other Param: {otherParam}</Text>
-      </View>
-    )
-
-  }
+  return (
+    <View>
+      <Text>PreviewMode Screen</Text>
+      <Text>Item ID: {itemId}</Text>
+      <Text>Other Param: {otherParam}</Text>
+    </View>
+  );
+};
 ```
