@@ -1,0 +1,1 @@
+studynote for mindy
