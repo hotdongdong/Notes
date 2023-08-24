@@ -4,13 +4,13 @@
 
 ## 安装
 
-```
+```tsx
 npm install --save react-native-swipe-list-view
 ```
 
 ## 简单用法
 
-```
+```tsx
 import {SwipeListView, SwipeRow} from 'react-native-swipe-list-view';
 
 <SwipeListView
@@ -49,7 +49,7 @@ import {SwipeListView, SwipeRow} from 'react-native-swipe-list-view';
 
 ## 学习网站
 
-```
+```tsx
 官方地址：https://github.com/jemise111/react-native-swipe-list-view
 
 使用分析：https://www.jianshu.com/p/65aa5db3bad8/
