@@ -11,6 +11,11 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+interface IPreviewModeProps {
+  itemId:number,
+  otherParams:string
+}
+
 // NavigatorParamList类型定义了路由参数的类型
 // undefined 表示该屏幕不需要参数
 // IPreviewModeProps表示该屏幕需要传递一个类型为IPreviewModeProps的参数
@@ -84,13 +89,30 @@ export const App = () => {
 
   const navigation: StackNavigationProp<NavigatorParamList> = useNavigation();
 
+  // 携带参数
   const click = () => {
-    navigation.navigate('PreviewMode',{XXXXX});
+    navigation.navigate('PreviewMode',{ itemId: 123, otherParams: 'Hello PreviewModeScreen'});
   }
 
+  // 屏幕1
   export const TextScreen = () => {
     return (
       <Button title="button" onPress={() => click()} />
     )
+  }
+
+  // 屏幕2
+  // 通过route来接收参数
+  export const PreviewModeScreen = ({route}) => {
+    const {itemId, otherParams} = route?.params
+
+    return (
+      <View>
+        <Text>PreviewMode Screen</Text>
+        <Text>Item ID: {itemId}</Text>
+        <Text>Other Param: {otherParam}</Text>
+      </View>
+    )
+
   }
 ```
