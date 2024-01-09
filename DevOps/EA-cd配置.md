@@ -1,3 +1,5 @@
+- [K8s 学习](https://kubernetes.io/zh-cn/docs/tutorials/kubernetes-basics/expose/expose-intro/)
+
 CD 的配置与之前的项目没有其他的变化
 
 主要还是通过两个步骤 DEPLOY KUBERNETES CONTAINERS 和 DEPLOY KUBERNETES INGRESS RESOURCE 结合使用进行部署
