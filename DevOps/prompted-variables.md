@@ -97,3 +97,5 @@
     ![image](https://github.com/mindy0-0/StudyNotes/assets/88584214/ce1a4ff6-ec19-42e8-a70b-4aca7cbc092c)
 
     ![image](https://github.com/mindy0-0/StudyNotes/assets/88584214/0e1efcbe-d3bb-40f6-8155-d0dba127435f)
+
+  - 选择好后 deploy 就可以了，这样就动态去改到了 Variables 里面的 ForceUpdate 的值了。
